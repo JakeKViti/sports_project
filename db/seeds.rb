@@ -1,1 +1,1 @@
-user1 = User.create(:username => "jake", :password => "1")
+user1 = Coaches.create(:username => "jake", :email => "jake@jake.jake", :password => "1")
