@@ -9,5 +9,6 @@ ActiveRecord::Base.establish_connection(
 )
 
 require './app/controllers/application_controller'
+require './app/controllers/teams_controller'
 require './app/controllers/coaches_controller'
 require_all 'app'
