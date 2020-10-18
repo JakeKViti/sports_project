@@ -8,13 +8,13 @@ class CoachesController < ApplicationController
       redirect to "/failure"
     else
           
-    user = Coaches.create(:username => params[:username], :email => params[:email], :password => params[:password])
+    user = Coach.create(:username => params[:username], :email => params[:email], :password => params[:password])
     redirect to "/login"
     end
   end
     
     get '/account' do
-      @user = Coaches.find(session[:user_id])
+      @user = Coach.find(session[:user_id])
       erb :'coaches/account'
     end
     
@@ -24,7 +24,7 @@ class CoachesController < ApplicationController
     end
     
     post "/login" do
-      @user = Coaches.find_by(:username => params[:username])
+      @user = Coach.find_by(:username => params[:username])
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
         redirect to "/account"

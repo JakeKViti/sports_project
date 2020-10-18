@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2) do
   create_table "teams", force: :cascade do |t|
     t.string  "sport"
     t.integer "num_of_players"
+    t.string  "team_name"
+    t.string  "location"
     t.integer "coach_id"
   end
 

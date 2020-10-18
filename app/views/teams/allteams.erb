@@ -1,0 +1,8 @@
+<p> Welcome, <%= current_user.username %><p><a href="/teams">:^)</a></p>
+<h2> Here is all the teams </h2>
+
+
+<% @teams.each do |team|%>
+<p> The <%=team.location%> <%=team.team_name%> that play <%=team.sport%> </p>
+</br>
+<%end%>
