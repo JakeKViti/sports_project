@@ -51,8 +51,8 @@ class TeamsController < ApplicationController
       end
     end
 
-    get "/error" do
-        erb :'teams/error'
+    get "/edit" do
+        erb :'teams/edit'
       end
 
     get "/success" do

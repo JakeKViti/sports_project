@@ -1,0 +1,10 @@
+<h2> Edit Team </h2>
+
+<form method="post" action="/teams/<%=@teams.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <input type="text" name="sport" value="<%= @teams.sport %>">
+  <input type="number" name="num_of_players" value="<%= @teams.num_of_players %>">
+  <input type="text" name="location" value="<%= @teams.location %>">
+  <input type="text" name="team_name" value="<%= @teams.team_name %>">
+  <input type="submit" value="submit">
+</form>
