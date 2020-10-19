@@ -51,6 +51,15 @@ class TeamsController < ApplicationController
       end
     end
 
+    get "/coachteams" do
+      if logged_in?
+        @teams = Team.all
+        erb :'teams/coachteams'
+      else
+        redirect to '/login'
+      end
+    end
+
     get "/edit" do
         erb :'teams/edit'
       end
