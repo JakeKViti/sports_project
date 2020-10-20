@@ -71,9 +71,9 @@ class TeamsController < ApplicationController
           redirect to "/edit/#{params[:id]}"
         else
           @teams = Team.find(params[:id])
-          if @teams && @teams.coach_id == current_user
+          if @teams && @teams.coach_id == current_user.id
             if @teams.update(sport: params[:sport], num_of_players: params[:num_of_players], team_name: params[:team_name], location: params[:location])
-              redirect to "/team/#{@teams.id}"
+              redirect to "/teams/#{@teams.id}"
             else
               redirect to "/edit/#{params[:id]}"
             end
