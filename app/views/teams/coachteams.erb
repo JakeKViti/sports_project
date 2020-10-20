@@ -4,7 +4,7 @@
 
 <% @teams.each do |team|%>
     <%if team.coach_id == current_user.id%>
-    <p> The <%=team.location%> <%=team.team_name%> that play <%=team.sport%> </p>
+    <p> The <%=team.location%> <%=team.team_name%> that play <%=team.sport%> </p> <a href="/edit/<%=team.id%>">Edit This Team</a>
     </br>
     <%end%>
 <%end%>

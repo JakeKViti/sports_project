@@ -60,12 +60,34 @@ class TeamsController < ApplicationController
       end
     end
 
-    get "/edit" do
+    get "/edit/:id" do
+        @teams = Team.find(params[:id])
         erb :'teams/edit'
-      end
+    end
 
-    get "/success" do
-        erb :'teams/success'
+    patch '/edit/:id' do
+      if logged_in?
+        if params[:sport] == "" || params[:num_of_players] == "" ||  params[:team_name] == "" || params[:location] == "" 
+          redirect to "/edit/#{params[:id]}"
+        else
+          @teams = Team.find(params[:id])
+          if @teams && @teams.coach_id == current_user
+            if @teams.update(sport: params[:sport], num_of_players: params[:num_of_players], team_name: params[:team_name], location: params[:location])
+              redirect to "/team/#{@teams.id}"
+            else
+              redirect to "/edit/#{params[:id]}"
+            end
+          else
+            redirect to '/coachteams'
+          end
+        end
+      else
+        redirect to '/login'
+      end
+    end
+
+    get "/error" do
+        erb :'teams/error'
     end
 
 end
