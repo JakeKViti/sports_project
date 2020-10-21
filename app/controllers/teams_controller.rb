@@ -86,8 +86,16 @@ class TeamsController < ApplicationController
       end
     end
 
-    get "/error" do
-        erb :'teams/error'
+    get '/delete/:id' do
+      if logged_in?
+        @teams = Team.find(params[:id])
+        if @teams && @teams.coach_id == current_user.id
+          @teams.delete
+        end
+        redirect to '/coachteams'
+      else
+        redirect to '/login'
+      end
     end
 
 end
