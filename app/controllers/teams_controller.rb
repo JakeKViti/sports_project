@@ -36,8 +36,12 @@ class TeamsController < ApplicationController
 
     get '/teams/:id' do
       if logged_in?
-        @team = Team.find(params[:id])
+        @team = Team.find(params[:id]) 
+        if  @team.coach_id == current_user.id
         erb :'teams/show'
+        else
+          redirect to '/failed'
+        end
       else
         redirect to '/login'
       end
@@ -98,6 +102,10 @@ class TeamsController < ApplicationController
       else
         redirect to '/login'
       end
+    end
+
+    get '/failed' do
+      erb :'teams/failed' 
     end
 
 end

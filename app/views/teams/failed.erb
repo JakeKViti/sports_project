@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+  </head>
+  <body id="page-top">
+  <h5 style="text-align:right;">  Current user: <a href="../coachteams"><%= current_user.username %><a> &emsp; <a href="../teams">Homepage</a> &emsp; <a href="logout">Log out</a></h5>
+  <hr> </br>
+    </br>
+    <p><%=current_user.username%>! You do not own this team! Please go <a href="/coachteams">here</a> to see what teams you do own</p>
+  </body>
+</html>
+
