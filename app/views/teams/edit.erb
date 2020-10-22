@@ -1,9 +1,27 @@
-<h2> Edit Team </h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+  </head>
+  <body id="page-top">
+  <h5 style="text-align:right;"> Current user: <a href="../coachteams"><%= current_user.username %></a> &emsp;  <a href="../teams">Homepage</a> &emsp; <a href="../logout">Log out</a></h5>
+  <hr> </br>
+<center>
+<h1> Edit Team </h1>
 <form method="post" action="/edit/<%=@teams.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <input type="text" name="sport" value="<%= @teams.sport %>">
-  <input type="number" name="num_of_players" value="<%= @teams.num_of_players %>">
-  <input type="text" name="location" value="<%= @teams.location %>">
-  <input type="text" name="team_name" value="<%= @teams.team_name %>">
+  <label for="username">Sport:&emsp;&emsp;&emsp;</label>
+   &emsp;&emsp;&emsp;<input type="text" name="sport" value="<%= @teams.sport %>"> </br>
+    <label for="username">How Many Players:</label>  
+  <input type="number" name="num_of_players" value="<%= @teams.num_of_players %>"> </br>
+    <label for="username">Tean Location:&emsp;&emsp;</label> 
+  <input type="text" name="location" value="<%= @teams.location %>"> </br>
+  <label for="username">Team Name:&emsp;&emsp;&emsp;</label>  
+  <input type="text" name="team_name" value="<%= @teams.team_name %>"> </br>
   <input type="submit" value="submit">
 </form>
+</center>
+  </body>
+</html>

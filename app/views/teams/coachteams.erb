@@ -1,10 +1,18 @@
-<p> Welcome, <%= current_user.username %><p><a href="/teams">:^)</a></p>
-<h2> Here are you're teams </h2>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+  </head>
+  <body id="page-top">
+  <h5 style="text-align:right;"> Current user: <%= current_user.username %> &emsp; <a href="../teams">Homepage</a> &emsp; <a href="../logout">Log out</a></h5>
+  <hr> </br>
+<center><h1> Here is all <%= current_user.username %>'s teams</h1></center> </br>
 
 <% @teams.each do |team|%>
     <%if team.coach_id == current_user.id%>
-    <p> The <%=team.location%> <%=team.team_name%> that play <%=team.sport%> </p> <a href="/edit/<%=team.id%>">Edit This Team</a> <a href="/delete/<%=team.id%>">Delete This Team</a>
+    <p> The <%=team.location%> <%=team.team_name%> that play <%=team.sport%></br>  <a href="/edit/<%=team.id%>">Edit This Team</a> <a href="/delete/<%=team.id%>">Delete This Team</a>
     </br>
     <%end%>
 <%end%>
