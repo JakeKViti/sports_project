@@ -1,8 +1,26 @@
-<h3>Create Teams</h3>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+  </head>
+  <body id="page-top">
+  <h5 style="text-align:right;"> <a href="../teams">Homepage</a> &emsp; <a href="../logout">Log out</a></h5>
+  <hr> </br>
+<center>
+<h1>Create Teams</h1>
 <form action="/teams" method="POST">
-  <input type="text" name="sport" placeholder="Sport:">
-  <input type="number" name="num_of_players" placeholder="How Many Players:">
-  <input type="text" name="location" placeholder="Tean Location:">
-  <input type="text" name="team_name" placeholder="Team Name:">
-  <input type="submit" value="Sign Up">
+<label for="username">Sport:&emsp;&emsp;&emsp;</label>
+  &emsp;&emsp;&emsp;<input type="text" name="sport"></br>
+<label for="username">How Many Players:</label>  
+  <input type="number" name="num_of_players"></br>
+<label for="username">Tean Location:&emsp;&emsp;</label>  
+  <input type="text" name="location"></br>
+<label for="username">Team Name:&emsp;&emsp;&emsp;</label>  
+  <input type="text" name="team_name"></br>
+  <input type="submit" value="Create">
 </form>
+</center>
+  </body>
+</html>

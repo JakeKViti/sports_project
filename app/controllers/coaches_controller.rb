@@ -4,7 +4,7 @@ class CoachesController < ApplicationController
   end
     
   post "/signup" do
-    if params[:username] == "" || params[:password] == "" 
+    if params[:username] == "" || params[:password] == "" || params[:email] == "" 
       redirect to "/failure"
     else
           
