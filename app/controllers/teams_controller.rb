@@ -67,9 +67,18 @@ class TeamsController < ApplicationController
     end
 
     get "/edit/:id" do
-        @teams = Team.find(params[:id])
+      if logged_in?
+        @team = Team.find(params[:id]) 
+        if  @team.coach_id == current_user.id
         erb :'teams/edit'
+      else
+        redirect to '/failed'
+      end
+    else
+      redirect to '/login'
     end
+  end
+    
 
     patch '/edit/:id' do
       if logged_in?
