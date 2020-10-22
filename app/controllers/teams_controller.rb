@@ -106,6 +106,8 @@ class TeamsController < ApplicationController
         @teams = Team.find(params[:id])
         if @teams && @teams.coach_id == current_user.id
           @teams.delete
+        else
+          redirect to '/failed'
         end
         redirect to '/coachteams'
       else
