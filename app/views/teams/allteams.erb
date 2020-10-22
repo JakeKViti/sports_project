@@ -1,8 +1,22 @@
-<p> Welcome, <%= current_user.username %><p><a href="/teams">:^)</a></p>
-<h2> Here is all the teams </h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+  </head>
+  <body id="page-top">
+  <h5 style="text-align:right;"> Current user: <a href="../coachteams"><%= current_user.username %></a> &emsp; <a href="../teams">Homepage</a> &emsp; <a href="../logout">Log out</a></h5>
+  <hr> </br>
+<center><h1> Here is all the teams</h1></center>
 
-
+<%counter = 1%>
 <% @teams.each do |team|%>
-<p> The <%=team.location%> <%=team.team_name%> that play <%=team.sport%> </p>
 </br>
+<%coach = Coach.find(team.coach_id)%>
+<p> <%=counter%>. The <%=team.location%> <%=team.team_name%> play <%=team.sport%>. They have <%=team.num_of_players%> players on their roster. This team is coached by <%=coach.username%>. You can contact their coach at <%=coach.email%> </p>
+<%counter+=1%>
 <%end%>
+
+  </body>
+</html>

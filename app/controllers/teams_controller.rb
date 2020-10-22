@@ -45,6 +45,7 @@ class TeamsController < ApplicationController
 
     get "/allteams" do
       if logged_in?
+        @user = Coach.all
         @teams = Team.all
         erb :'teams/allteams'
       else
