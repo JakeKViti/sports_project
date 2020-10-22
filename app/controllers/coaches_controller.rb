@@ -27,7 +27,7 @@ class CoachesController < ApplicationController
       @user = Coach.find_by(:username => params[:username])
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
-        redirect to "/account"
+        redirect to "/teams"
       else
         redirect to "/failure"
       end

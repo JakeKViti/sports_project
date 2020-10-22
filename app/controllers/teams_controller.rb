@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
     get "/teams" do
       if logged_in?
+        @user = Coach.find(session[:user_id])
         @teams = Team.all
         erb :'teams/index'
       else

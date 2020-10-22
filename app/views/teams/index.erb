@@ -6,10 +6,13 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
-    <h1>Teams Index</h1>
-    <p> <a href="/teams/new">Create Team</a></p>
-    <p> <a href="/allteams">All Teams</a></p>
-    <p> <a href="/coachteams"> Your Teams </a></p>
+  <h5 style="text-align:right;"> <a href="logout">Log out</a></h5>
+  <hr> </br>
+  <h1 style="text-align:center;"> <%="Welcome #{@user.username}"%>!</h1>
+    <hr></br>
+    <p> <a href="/teams/new">Create A Team</a></p>
+    <p> <a href="/allteams">View All Teams</a></p>
+    <p> <a href="/coachteams">View Your Teams </a></p>
 
   </body>
 </html>
