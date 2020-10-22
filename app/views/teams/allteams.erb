@@ -14,7 +14,7 @@
 <% @teams.each do |team|%>
 </br>
 <%coach = Coach.find(team.coach_id)%>
-<p> <%=counter%>. The <%=team.location%> <%=team.team_name%> play <%=team.sport%>. They have <%=team.num_of_players%> players on their roster. This team is coached by <%=coach.username%>. You can contact their coach at <%=coach.email%> </p>
+<p> <%=counter%>. The <%=team.location%> <%=team.team_name%>, a <%=team.sport%> team. They have <%=team.num_of_players%> players on their roster. This team is coached by <%=coach.username%>. You can contact their coach at <%=coach.email%> </p>
 <%counter+=1%>
 <%end%>
 
