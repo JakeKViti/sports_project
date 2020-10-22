@@ -6,13 +6,17 @@ This project is designed to track a coach's teams and to show them other teams t
 ## Installation
 Add this line to your application's Gemfile:
 
+```ruby
 gem 'sports_project'
+```
+
 And then execute:
 
-$ bundle install
+    $ bundle
+
 Or install it yourself as:
 
-$ gem install sports_project
+    $ gem install sports_project
 
 
 
