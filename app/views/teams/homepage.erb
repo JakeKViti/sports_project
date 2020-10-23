@@ -8,7 +8,7 @@
   <body id="page-top">
   <h5 style="text-align:right;">  Current user: <a href="../coachteams"><%= current_user.username %><a> &emsp; Homepage &emsp; <a href="logout">Log out</a></h5>
   <hr> </br>
-  <h1 style="text-align:center;"> <%="Welcome #{@user.username}"%>!</h1>
+  <h1 style="text-align:center;"> <%="Welcome #{current_user.username}"%>!</h1>
     </br>
     <p> <a href="/teams/new">Create A Team</a></p>
     <p> <a href="/allteams">View All Teams</a></p>

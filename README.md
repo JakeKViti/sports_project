@@ -7,7 +7,7 @@ This project is designed to track a coach's teams and to show them other teams t
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sports_project'
+    gem 'sports_project'
 ```
 
 And then execute:
