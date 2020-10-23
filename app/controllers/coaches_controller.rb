@@ -12,13 +12,7 @@ class CoachesController < ApplicationController
     redirect to "/login"
     end
   end
-    
-    get '/account' do
-      @user = Coach.find(session[:user_id])
-      erb :'coaches/account'
-    end
-    
-    
+      
     get "/login" do
       erb :'coaches/login'
     end

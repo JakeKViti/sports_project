@@ -10,16 +10,16 @@
   <hr> </br>
 <center>
 <h1> Edit Team </h1>
-<form method="post" action="/edit/<%=@teams.id%>">
+<form method="post" action="/edit/<%=@team.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
   <label for="username">Sport:&emsp;&emsp;&emsp;</label>
-   &emsp;&emsp;&emsp;<input type="text" name="sport" value="<%= @teams.sport %>"> </br>
+   &emsp;&emsp;&emsp;<input type="text" name="sport" value="<%= @team.sport %>"> </br>
     <label for="username">How Many Players:</label>  
-  <input type="number" name="num_of_players" value="<%= @teams.num_of_players %>"> </br>
+  <input type="number" name="num_of_players" value="<%= @team.num_of_players %>"> </br>
     <label for="username">Tean Location:&emsp;&emsp;</label> 
-  <input type="text" name="location" value="<%= @teams.location %>"> </br>
+  <input type="text" name="location" value="<%= @team.location %>"> </br>
   <label for="username">Team Name:&emsp;&emsp;&emsp;</label>  
-  <input type="text" name="team_name" value="<%= @teams.team_name %>"> </br>
+  <input type="text" name="team_name" value="<%= @team.team_name %>"> </br>
   <input type="submit" value="submit">
 </form>
 </center>
