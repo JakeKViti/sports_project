@@ -5,7 +5,7 @@ class CoachesController < ApplicationController
     
   post "/signup" do
     if params[:username] == "" || params[:password] == "" || params[:email] == "" 
-      redirect to "/failure"
+      redirect to "/signfailure"
     else
           
     user = Coach.create(:username => params[:username], :email => params[:email], :password => params[:password])
@@ -23,12 +23,16 @@ class CoachesController < ApplicationController
         session[:user_id] = @user.id
         redirect to "/teams"
       else
-        redirect to "/failure"
+        redirect to "/logfailure"
       end
     end
     
-    get "/failure" do
-      erb :'coaches/failure'
+    get "/logfailure" do
+      erb :'coaches/logfailure'
+    end
+
+    get "/signfailure" do
+      erb :'coaches/signfailure'
     end
     
     get "/logout" do
