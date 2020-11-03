@@ -6,10 +6,9 @@ class CoachesController < ApplicationController
   post "/signup" do
     if params[:username] == "" || params[:password] == "" || params[:email] == "" 
       redirect to "/signfailure"
-    else
-          
-    user = Coach.create(:username => params[:username], :email => params[:email], :password => params[:password])
-    redirect to "/login"
+    else    
+      user = Coach.create(:username => params[:username], :email => params[:email], :password => params[:password])
+      redirect to "/login"
     end
   end
       

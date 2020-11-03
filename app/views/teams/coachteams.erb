@@ -12,7 +12,7 @@
 
 <% @teams.each do |team|%>
     <%if team.coach_id == current_user.id%>
-    <p> The <%=team.location%> <%=team.team_name%> that play <%=team.sport%></br>  <a href="/edit/<%=team.id%>">Edit This Team</a> <a href="/delete/<%=team.id%>">Delete This Team</a>
+    <p> The <%=team.location%> <%=team.team_name%> </br>  <a href="/edit/<%=team.id%>">Edit This Team</a> <a href="/delete/<%=team.id%>">Delete This Team</a> <a href="/teams/<%=team.id%>">More Info</a>
     </br>
     <%end%>
 <%end%>

@@ -8,14 +8,14 @@
   <body id="page-top">
   <h5 style="text-align:right;"> Current user: <a href="../coachteams"><%= current_user.username %></a> &emsp; <a href="../teams">Homepage</a> &emsp; <a href="../logout">Log out</a></h5>
   <hr> </br>
-  <center> <h1> Here's what you entered </h1> </br> </center>
-  <p> Please make sure that the information is entered correctly </p>
+  <center> <h3> Here's the information about <%= current_user.username %>'s <%= @team.location%> <%= @team.team_name%> </h3> </br> </center>
     <p> Sport: <b> <%= @team.sport%> </b> </br> </p>
     <p> Number of Players: <b> <%= @team.num_of_players%> </b></br></p>
     <p> Location: <b> <%= @team.location%> </b> </br></p>
     <p> Team Name: <b> <%= @team.team_name%> </b></p>
 
     <p> If any information is wrong, <a href="/edit/<%=@team.id%>">click here</a></p>
-    <p> If everything is correct, <a href="../teams">click here</a></p>
+    <p> If you no longer want this team, <a href="/delete/<%=@team.id%>">click here</a></p>
+    <p> If you want to see your other teams, <a href="../coachteams">click here</a></p>
   </body>
 </html>
