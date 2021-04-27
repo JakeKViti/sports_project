@@ -3,23 +3,6 @@
 
 This project is designed to track a coach's teams and to show them other teams that the project is also tracking.
 
-## Installation
-Add this line to your application's Gemfile:
-
-```ruby
-    gem 'sports_project'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sports_project
-
-
-
 ## Usage
 
 When you load into the website, you have to choice to login or sign-up. If you have not made an account, you will have to make an account with a username, password, and email. If you have an account or just made one, you will have to sign in with username and password.
